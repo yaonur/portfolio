@@ -1,5 +1,4 @@
 name: Portfolio site workflow
-
 on:
   push:
     branches:
