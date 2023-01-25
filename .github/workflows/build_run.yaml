@@ -1,4 +1,4 @@
-name: Protfolio site workflow
+name: Portfolio site workflow
 
 on:
   push:
