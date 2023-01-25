@@ -14,3 +14,10 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: hey there
+        run: echo "Hey there"
+        shell: bash
+  goodbye:
+    runs-on: ubuntu-latest
+    run: echo "bye bye"
+    shell: bash
