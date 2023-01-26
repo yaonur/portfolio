@@ -22,8 +22,8 @@ jobs:
 #        shell: bash
       - name: docker login
         env:
-          USER: ${{ secrets.REGISTRY_USER }}
-          PASS: ${{ secrets.REGISTRY_PASS }}
+          USER: ${{ secrets.USER }}
+          PASS: ${{ secrets.PASS }}
         run: |
           echo $PASS | docker login -u $USER  so2homelab.com:6080 --password-stdin
         shell: bash
