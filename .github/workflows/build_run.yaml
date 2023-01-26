@@ -13,13 +13,10 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: hey there
-        run: echo "Hey there"
-        shell: bash
-  goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: bye bye
-        run: echo "bye bye"
+      - name: docker login
+        env:
+          REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
+          REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
+        run: |
+          docker login -u $REGISTRY_USER -p $REGISTRY_PASS so2hom2lab.com:6080
         shell: bash
