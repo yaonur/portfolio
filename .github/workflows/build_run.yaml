@@ -29,5 +29,5 @@ jobs:
           USER: ${{ secrets.USER }}
           PASS: ${{ secrets.PASS }}
         run: |
-               echo $PASS | docker login -u $USER --insecure-registry so2homelab.com:6080 --password-stdin
+               echo $PASS | docker login -u $USER  so2homelab.com:6080 --password-stdin
         shell: bash
