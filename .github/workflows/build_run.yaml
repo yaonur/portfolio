@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: test secret
         env:
-          REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
-          REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
+          USER: ${{ secrets.USER}}
+          PASS: ${{ secrets.PASS }}
         run: echo $REGISTRY_USER
         shell: bash
 #      - name: docker login
