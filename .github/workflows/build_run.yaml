@@ -35,8 +35,10 @@ jobs:
 #        run: docker build -t so2homelab.com:6080/library/portfolio:latest .
 #      - name: Push Docker Image
 #        run: docker push so2homelab.com:6080/library/portfolio:latest
+      - name: check kubeconfig
+        run: echo ${{ secrets.KUBECONFIG }}
       - name: Set KUBECONFIG
-        run: echo ${{ secrets.KUBECONFIG }} | openssl base64 -d > kubeconfig.yaml
+        run: echo ${{ secrets.KUBECONFIG }} | base64 -d > kubeconfig.yaml
 
       - name: Deploy to Kubernetes
         env:
