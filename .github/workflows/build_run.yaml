@@ -14,16 +14,16 @@ jobs:
     environment: docker
     steps:
       - uses: actions/checkout@v3
-      - name: test secret
-        env:
-          USER: ${{ secrets.USER}}
-          PASS: ${{ secrets.PASS }}
-        run: echo $USER
-        shell: bash
-#      - name: docker login
+#      - name: test secret
 #        env:
-#          REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
-#          REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
-#        run: |
-#          echo $REGISTRY_PASS | docker login -u $REGISTRY_USER  so2homelab.com:6080 --password-stdin
+#          USER: ${{ secrets.USER}}
+#          PASS: ${{ secrets.PASS }}
+#        run: echo $USER
 #        shell: bash
+      - name: docker login
+        env:
+          USER: ${{ secrets.REGISTRY_USER }}
+          PASS: ${{ secrets.REGISTRY_PASS }}
+        run: |
+          echo $PASS | docker login -u $USER  so2homelab.com:6080 --password-stdin
+        shell: bash
