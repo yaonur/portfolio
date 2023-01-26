@@ -35,13 +35,10 @@ jobs:
 #        run: docker build -t so2homelab.com:6080/library/portfolio:latest .
 #      - name: Push Docker Image
 #        run: docker push so2homelab.com:6080/library/portfolio:latest
-      - uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-        with:
-          args: get pods
-#      - name: Set KUBECONFIG
-#        run: echo ${{ secrets.KUBECONFIG }} | base64 -d > kubeconfig.yaml
+      - name: set kube config
+        run: |
+          mkdir ${HOME}/.kube
+          echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > ${HOME}/.kube/config
 #
 #      - name: Deploy to Kubernetes
 #        env:
