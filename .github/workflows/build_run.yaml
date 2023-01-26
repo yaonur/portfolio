@@ -13,10 +13,16 @@ jobs:
     runs-on : ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: docker login
+      - name: test secret
         env:
           REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
           REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
-        run: |
-          echo $REGISTRY_PASS | docker login -u $REGISTRY_USER  so2homelab.com:6080 --password-stdin
+        run: echo $REGISTRY_USER
         shell: bash
+#      - name: docker login
+#        env:
+#          REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
+#          REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
+#        run: |
+#          echo $REGISTRY_PASS | docker login -u $REGISTRY_USER  so2homelab.com:6080 --password-stdin
+#        shell: bash
