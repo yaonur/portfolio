@@ -32,6 +32,6 @@ jobs:
           echo $PASS | docker login -u $USER  so2homelab.com:6080 --password-stdin
         shell: bash
       - name: Build Docker Image
-        run: docker build -t so2harbor.com:6000/library/portfolio:latest .
+        run: docker build -t so2harbor.com:6080/library/portfolio:latest .
       - name: Push Docker Image
-        run: docker push so2harbor.com:6000/library/portfolio:latest
+        run: docker push so2harbor.com:6080/library/portfolio:latest
