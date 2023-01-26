@@ -42,4 +42,4 @@ jobs:
           cat ${HOME}/.kube/config
       - name: restart pod
         run: |
-          kubectl rollout restart deployment.apps/portfolio-deployment -n default
+          kubectl --insecure-skip-tls-verify rollout restart deployment.apps/portfolio-deployment -n default
