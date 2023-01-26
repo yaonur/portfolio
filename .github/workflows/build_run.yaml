@@ -25,5 +25,6 @@ jobs:
           USER: ${{ secrets.USER }}
           PASS: ${{ secrets.PASS }}
         run: |
+          echo ${{ secrets.DOCKER_AUTH_CONFIG }} | base64 --decode > ${{ env.HOME }}/.docker/config.json
           echo $PASS | docker login -u $USER --insecure-registry so2homelab.com:6080 --password-stdin
         shell: bash
