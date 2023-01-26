@@ -35,3 +35,10 @@ jobs:
         run: docker build -t so2homelab.com:6080/library/portfolio:latest .
       - name: Push Docker Image
         run: docker push so2homelab.com:6080/library/portfolio:latest
+      - name: Set KUBECONFIG
+        run: echo ${{ secrets.KUBECONFIG }} | base64 --decode > kubeconfig.yaml
+      - name: Deploy to Kubernetes
+        env:
+          KUBECONFIG: ${{ runner.workspace }}/kubeconfig.yaml
+        run: |
+          kubectl rollout restart deployment.apps/portfolio-deployment -n default
