@@ -60,6 +60,7 @@
 		margin-left: 11rem;
 		/*top: 0;*/
 		width: 100%;
+		height: 100%;
 	}
 	.pageClosed{
 		margin-left: 2.6rem;
@@ -73,7 +74,7 @@
 		top: 0;
 		left: 0;
 		padding-top: 3rem;
-		height: 100vh;
+		height: 100%;
 		width: 11rem;
 		background: var(--sidebar-color);
 		z-index: 1;
