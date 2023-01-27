@@ -12,9 +12,9 @@
 			activeSection = sections.getActiveSection();
 		});
 	});
-	onDestroy(() => {
-		activeSection.unsubscribe();
-	});
+	// onDestroy(() => {
+	// 	activeSection.unsubscribe();
+	// });
 
 </script>
 
