@@ -13,7 +13,7 @@
 		<div class="welcome-text">
 			<h1>Welcome</h1>
 			<h2>Im a Software Engineer Web App Developer focused on </h2>
-			<h2>B2B and B2C solutions</h2>
+			<h2>Backend Development,Tooling and Infrastructure</h2>
 		</div>
 	</div>
 	<div class="body-container">
