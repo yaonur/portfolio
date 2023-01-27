@@ -2,98 +2,112 @@
 	import {Router, Link, Route} from "svelte-navigator";
 	import {fly} from 'svelte/transition'
 	import Header from "./lib/Header.svelte"
-	import Menu from "./lib/Menu.svelte";
+	import Sidebar from "./lib/Sidebar.svelte";
 	import Home from "./routes/Home.svelte";
 	import About from "./routes/About.svelte";
 	import Projects from "./routes/Projects.svelte";
 	import Contact from "./routes/Contact.svelte";
 	import Success from "./routes/Success.svelte";
 	
-	let closed = true
+	let closed = false
+	let innerWidth
 	
 	const toggle = () => {
 		console.log("pressed")
 		closed = !closed
 		
 	}
-</script>
+	$:condition = innerWidth > 800;
 
-<Router>
-	<nav>
-		<div class="sidebar" class:closed>
-			<div class="arrow-background" class:arrClosed={closed} on:click={toggle}>
-				<i class={closed? 'bx bx-chevrons-right':'bx bx-chevrons-left'}></i>
-			</div>
-			
-			{#if !closed}
-				<div transition:fly={{x:-100,y:-100,duration:300,delay:0}}>
-					<Header></Header>
+</script>
+<svelte:window bind:innerWidth/>
+{#if condition}
+	<Router>
+		<div class="main-container">
+			<nav class="sidebar" class:sidebarClosed={closed}>
+				<div class="arrow" class:arrClosed={closed} on:click={toggle} on:keydown={toggle}>
+					<i class={closed? 'bx bx-chevrons-right':'bx bx-chevrons-left'}></i>
 				</div>
-			{/if}
-			
-			<Menu></Menu>
+				<Sidebar></Sidebar>
+			</nav>
+			<div class="page" class:pageClosed={closed}>
+				<Route path="/">
+					<Home/>
+				</Route>
+				<Route path="about" component={About}/>
+				<Route path="projects" component={Projects}/>
+				<Route path="contact" component={Contact}/>
+				<Route path="success" component="{Success}"/>
+			</div>
 		</div>
-	</nav>
-	<div class="page" class:pageClosed={closed}>
-		<Route path="/">
-			<Home/>
-		</Route>
-		<Route path="about" component={About}/>
-		<Route path="projects" component={Projects}/>
-		<Route path="contact" component={Contact}/>
-		<Route path="success" component="{Success}"/>
-	</div>
-</Router>
+	</Router>
+{:else}
+	<h1>Im a Software engineer,Backend developer </h1>
+	<h2>with some design knowledge </h2>
+	<h2>This site is not intended to be mobile responsive</h2>
+{/if}
 
 <style>
-	.page {
-		transition: var(--tran);
-		position: fixed;
-		top: 0;
-		left: 300px;
-		width: 100%;
-		height: 100%;
+	.main-container {
+		display: flex;
+		flex-direction: row;
+		height: 100vh;
+		width: 100vw;
 	}
 	
-	.pageClosed {
-		left: 100px;
+	.page {
+		transition: var(--tran);
+		margin-left: 11rem;
+		/*top: 0;*/
+		width: 100%;
+	}
+	.pageClosed{
+		margin-left: 2.6rem;
 	}
 	
 	.sidebar {
-		transition: var(--tran);
 		position: fixed;
 		overflow: hidden;
+		transition: var(--tran);
+		/*height: 200vh;*/
 		top: 0;
 		left: 0;
-		height: 100%;
-		width: 250px;
-		padding: 10px 14px;
-		background: var(--sidebar-color)
+		padding-top: 3rem;
+		height: 100vh;
+		width: 11rem;
+		background: var(--sidebar-color);
+		z-index: 1;
 	}
 	
-	.arrow-background {
-		z-index: 10;
-		position: absolute;
-		top: 3%;
-		right: 3px;
+	
+	
+	
+	.sidebarClosed {
+		width: 2.6rem;
+		padding-top: 65px;
+	}
+	
+	.arrow {
+		top: 17rem;
 		transform: translateY(-50%);
 		font-size: 22px;
 		padding: 4px;
-		background: var(--primary-color);
+		background: var(--sidebar-color);
 		opacity: 90%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
+		transition: var(--tran);
+	}
+	
+	.arrow:hover {
+		background-color: var(--primary-color);
 	}
 	
 	.arrClosed {
-		right: 15px;
+		right: 10px;
 	}
-	
-	.closed {
-		width: 35px;
-		padding-top: 65px;
-	}
+
 
 </style>

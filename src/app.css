@@ -13,11 +13,12 @@
   -webkit-text-size-adjust: 100%;
 
   --body-color:#F5F5F5;
-  --sidebar-color:#FFF;
-  --primary-color: #9370DB;
-  --hover-primary-color:#ac73ff;
+  --sidebar-color:#606470;
+  --primary-color: #433c54;
+  --hover-primary-color: #a697c4;
   --button-color:#a2a8d3;
-  --text-color: #575656;
+  --text-color: #f7f7f7;
+  --project-background:#161623;
 
   --tran: all 0.5s ease;
 }
@@ -26,7 +27,12 @@ body {
   margin: 0;
   height: 100vh;
   background: var(--body-color);
+  overflow:auto;
+  /*scroll-behavior: smooth;*/
 }
+body::-webkit-scrollbar{
+    display: none;
+  }
 
 /*a {*/
 /*  font-size: 1.15em;*/
