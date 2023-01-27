@@ -26,7 +26,7 @@
 		/*margin: 30px;*/
 		box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
 		border-radius: 15px;
-		background: rgba(255, 255, 255, 0.1);
+		background: var(--card-background);
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
@@ -80,13 +80,13 @@
 		font-size: 1.8em;
 		height: 2.5em;
 		width: 9em;
-		color: #fff;
+		color: var(--text-color);
 		z-index: 1;
 	}
 	
 	p {
 		font-size: 1em;
-		color: #fff;
+		color: var(--text-color);
 		font-weight: 300;
 	}
 	
