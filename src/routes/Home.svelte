@@ -42,7 +42,7 @@
 		padding: 10px;
 		width: 100%;
 		height: 100%;
-		background-color: var(--primary-color);
+		/*background-color: var(--primary-color);*/
 		/*background-image: url("../assets/pic/background-home.jpg");*/
 		/*background-repeat: no-repeat;*/
 		/*background-size: cover;*/
