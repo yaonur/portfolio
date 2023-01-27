@@ -53,7 +53,7 @@
 	}
 	
 	a:hover {
-		background: var(--primary-color);
+		background: var(--hover-primary-color);
 		
 	}
 	

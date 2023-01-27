@@ -12,10 +12,11 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
-    --body-color: #8d8989;
+    --body-color: #9a9898;
     --sidebar-color: #606470;
-    --primary-color: #a399c7;
-    --hover-primary-color: #a697c4;
+    --primary-color: rgba(172, 190, 215, 0.67);
+    --primary-text-color: #252424;
+    --hover-primary-color: #2c2736;
     --button-color: #a2a8d3;
     --text-color: #cbc7c7;
     --project-background: #1b2052;
@@ -27,7 +28,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: var(--body-color);
+    background: var(--primary-color);
     overflow: auto;
     /*scroll-behavior: smooth;*/
 }
