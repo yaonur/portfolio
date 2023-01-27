@@ -24,7 +24,7 @@
 			name: "Bluetooth Midi Controller",
 			link: "https://github.com/yaonur/ble2devkit",
 			description: "This is a bluetooth midi controller to use my guitar pedals and processors on stage",
-			alt_text:"Enstrumanists dont make huge money gains for tech corporations.It's better to do it yourself than to wait for someone else to do it."
+			alt_text:"Enstrumanists dont make huge money gains for tech corporations.It's better to do it yourself than to wait for someone else."
 		},
 		{
 			name: "Dota2 gaming bot",

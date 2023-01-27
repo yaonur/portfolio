@@ -1,38 +1,40 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  /*font-size: 16px;*/
-  /*line-height: 24px;*/
-  /*font-weight: 400;*/
-  /*color-scheme: light dark;*/
-  /*color: rgba(255, 255, 255, 0.87);*/
-  /*background-color: #242424;*/
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    /*font-size: 16px;*/
+    /*line-height: 24px;*/
+    /*font-weight: 400;*/
+    /*color-scheme: light dark;*/
+    /*color: rgba(255, 255, 255, 0.87);*/
+    /*background-color: #242424;*/
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 
-  --body-color:#F5F5F5;
-  --sidebar-color:#606470;
-  --primary-color: #433c54;
-  --hover-primary-color: #a697c4;
-  --button-color:#a2a8d3;
-  --text-color: #f7f7f7;
-  --project-background:#161623;
+    --body-color: #8d8989;
+    --sidebar-color: #606470;
+    --primary-color: #a399c7;
+    --hover-primary-color: #a697c4;
+    --button-color: #a2a8d3;
+    --text-color: #cbc7c7;
+    --project-background: #1b2052;
+    --card-background: linear-gradient(90deg, rgb(63, 62, 101) 0%, rgb(24, 56, 101) 40%, rgb(31, 33, 72) 100%);
 
-  --tran: all 0.5s ease;
+    --tran: all 0.5s ease;
 }
 
 body {
-  margin: 0;
-  height: 100vh;
-  background: var(--body-color);
-  overflow:auto;
-  /*scroll-behavior: smooth;*/
+    margin: 0;
+    height: 100vh;
+    background: var(--body-color);
+    overflow: auto;
+    /*scroll-behavior: smooth;*/
 }
-body::-webkit-scrollbar{
+
+body::-webkit-scrollbar {
     display: none;
-  }
+}
 
 /*a {*/
 /*  font-size: 1.15em;*/
