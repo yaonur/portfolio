@@ -9,7 +9,7 @@
 	import Contact from "./routes/Contact.svelte";
 	import Success from "./routes/Success.svelte";
 	
-	let closed = false
+	let closed = true
 	let innerWidth
 	
 	const toggle = () => {
@@ -17,7 +17,7 @@
 		closed = !closed
 		
 	}
-	$:condition = innerWidth > 800;
+	$:condition = innerWidth > 300;
 
 </script>
 <svelte:window bind:innerWidth/>

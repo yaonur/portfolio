@@ -45,7 +45,7 @@
 	button {
 		padding: 1rem;
 		cursor: pointer;
-		background: var(--primary-color);
+		background: var(--hover-primary-color);
 		color: var(--body-color);
 		font-size: 24px;
 		font-weight: 1000;
@@ -55,13 +55,14 @@
 	}
 	
 	button:hover {
-		background: var(--hover-primary-color);
+		transition: var(--tran);
+		background: var(--primary-text-color);
 	}
 	.radio-groups{
 		display: flex;
 		align-content: center;
 		align-items: center;
-		color:var(--text-color);
+		color:var(--primary-text-color);
 		font-weight: 800;
 	}
 </style>
