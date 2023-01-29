@@ -25,15 +25,16 @@
 		height: 400px;
 		/*margin: 30px;*/
 		box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-		border-radius: 15px;
+		border-radius: 1em;
 		background: var(--card-background);
+		/*background: rgba(255,255,255,0.2);*/
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border-top: 1px solid rgba(255, 255, 255, 0.5);
 		border-left: 1px solid rgba(255, 255, 255, 0.3);
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(40px);
 	}
 	
 	.content {

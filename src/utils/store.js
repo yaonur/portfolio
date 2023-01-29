@@ -14,6 +14,7 @@ function createSections() {
                 }
             });
         });
+        // @ts-ignore
         return activeSection.name;
     }
 
